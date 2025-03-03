@@ -1,0 +1,10 @@
+<div>
+    <video #videoElement autoplay></video>
+    <button (click)="startCamera()">Access Camera</button>
+    <button (click)="capturePhoto()">Capture Photo</button>
+    <button (click)="startRecording()">Start Recording</button>
+    <button (click)="stopRecording()">Stop Recording</button>
+    <canvas #canvasElement style="display: none;"></canvas>
+    <img *ngIf="photo" [src]="photo" alt="Captured Photo"/>
+    <video *ngIf="recordedVideoUrl" [src]="recordedVideoUrl" controls></video>
+  </div>

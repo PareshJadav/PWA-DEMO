@@ -1,0 +1,7 @@
+<button (click)="getLocation()">Get Location</button>
+    <div *ngIf="location">
+      Latitude: {{ location.latitude }} <br>
+      Longitude: {{ location.longitude }}<br>
+      Heading: {{ location.heading }}<br>
+
+    </div>

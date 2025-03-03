@@ -1,0 +1,2 @@
+<button (click)="toggleRecording()" [disabled]="isPlaying">{{ isRecording ? 'Stop Recording' : 'Start Recording' }}</button>
+<button (click)="playAudio()" [disabled]="!audioUrl || isRecording">Play Audio</button>
