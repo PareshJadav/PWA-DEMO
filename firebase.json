@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "pushnotificationdemo-d28f1-9c5c1",
+    "public": "deployedapp/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

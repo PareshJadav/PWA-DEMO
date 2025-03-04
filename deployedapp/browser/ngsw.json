@@ -1,0 +1,108 @@
+{
+  "configVersion": 1,
+  "timestamp": 1741088319048,
+  "index": "/index.csr.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/firebase-messaging-sw.js",
+        "/index.html",
+        "/main-WJ2I7A6A.js",
+        "/manifest.webmanifest",
+        "/ngsw-worker.js",
+        "/polyfills-FFHMD2TL.js",
+        "/styles-5INURTSO.css"
+      ],
+      "patterns": [
+        "https:\\/\\/192\\.168\\.27\\.172:4201\\/.*"
+      ]
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/icons/icon-128x128.png",
+        "/icons/icon-144x144.png",
+        "/icons/icon-152x152.png",
+        "/icons/icon-192x192.png",
+        "/icons/icon-384x384.png",
+        "/icons/icon-512x512.png",
+        "/icons/icon-72x72.png",
+        "/icons/icon-96x96.png",
+        "/screenshots/1024x768.png",
+        "/screenshots/600x800.png",
+        "/screenshots/home.png",
+        "/screenshots/wide-screen.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-freshness",
+      "patterns": [
+        "\\/api\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": 259200000,
+      "timeoutMs": 10000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/firebase-messaging-sw.js": "f4c6c9aff79d0a5d9fc35dc26d5d8f67a85d1a46",
+    "/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/index.html": "eae9cd1674ffd3897ceb57cfcbc25f3c07a02fb3",
+    "/main-WJ2I7A6A.js": "bcdd6fef1b86358450c5035bcf78c1e87d43788e",
+    "/manifest.webmanifest": "6bc615de7b3b7d6733972cacca0771aaaa0a8567",
+    "/ngsw-worker.js": "0eeac59e0f34c35dc3a9edc926d9eabe14739608",
+    "/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "/screenshots/1024x768.png": "41ab3d8d9fbe6e0c9021db89a45ad1508b0b69e4",
+    "/screenshots/600x800.png": "624ce289afcc9080b70ec52dead931b8891f7700",
+    "/screenshots/home.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/screenshots/wide-screen.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/styles-5INURTSO.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

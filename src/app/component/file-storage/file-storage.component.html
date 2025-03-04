@@ -1,0 +1,86 @@
+<div class="file-operations">
+    <!-- Info message for browser compatibility -->
+    <div *ngIf="!isFileSystemAccessSupported()" class="info-message">
+        <div *ngIf="isIOS">
+            Using compatible file handling mode for iOS devices
+        </div>
+        <div *ngIf="!isIOS">
+            Using basic file handling mode for this browser
+        </div>
+    </div>
+
+    <!-- Hidden file input -->
+    <input 
+        #fileInput
+        type="file"
+        accept="image/*,text/plain,application/json"
+        (change)="handleTraditionalFileSelect($event)"
+    >
+
+    <!-- Button group -->
+    <div class="button-group">
+        <!-- Primary action buttons -->
+        <button 
+            class="primary-button" 
+            (click)="triggerFileInput()">
+            Choose File
+        </button>
+
+        <button 
+            class="action-button"
+            (click)="downloadFile()" 
+            [disabled]="!selectedFiles.length">
+            Download
+        </button>
+
+        <button 
+            class="action-button"
+            (click)="clearSelection()" 
+            [disabled]="!selectedFiles.length">
+            Clear
+        </button>
+
+        <!-- Text file specific actions -->
+        <button 
+            class="secondary-button"
+            (click)="createFile()"
+            [disabled]="!canCreateNewFile">
+            New Text File
+        </button>
+
+        <button 
+            class="secondary-button"
+            (click)="saveFile()" 
+            [disabled]="!fileContent">
+            Save Changes
+        </button>
+    </div>
+
+    <!-- File preview section -->
+    <div *ngIf="selectedFiles.length > 0 || fileContent" class="file-preview">
+        <div class="file-info">
+            <h3>{{ currentFileName }}</h3>
+            <p *ngIf="selectedFiles.length > 0">Size: {{ getFileSize() }}</p>
+        </div>
+
+        <!-- Image preview -->
+        <div *ngIf="imagePreviewUrl" class="image-preview">
+            <img [src]="imagePreviewUrl" alt="Selected image">
+        </div>
+
+        <!-- Text content preview -->
+        <div *ngIf="fileContent || !imagePreviewUrl" class="text-preview">
+            <textarea 
+                [(ngModel)]="fileContent" 
+                rows="10" 
+                placeholder="Text content..."
+                [readonly]="isIOS">
+            </textarea>
+        </div>
+    </div>
+
+    <!-- Error message display -->
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+</div>
