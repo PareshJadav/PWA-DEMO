@@ -70,7 +70,7 @@ export class AppComponent implements OnInit {
       const payload = {
           title: 'Hello!',
           body: 'This is a push notification.',
-          icon: 'path/to/icon.png', // Optional icon
+          icon: '/icons/icon-192x192.png', // Optional icon
       };
   
       // Check if the service worker is registered
