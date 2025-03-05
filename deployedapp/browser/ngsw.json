@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1741088319048,
+  "timestamp": 1741092346313,
   "index": "/index.csr.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "/favicon.ico",
         "/firebase-messaging-sw.js",
         "/index.html",
-        "/main-WJ2I7A6A.js",
+        "/main-SPV4NAKE.js",
         "/manifest.webmanifest",
         "/ngsw-worker.js",
         "/polyfills-FFHMD2TL.js",
@@ -76,7 +76,7 @@
     "/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
     "/index.html": "eae9cd1674ffd3897ceb57cfcbc25f3c07a02fb3",
-    "/main-WJ2I7A6A.js": "bcdd6fef1b86358450c5035bcf78c1e87d43788e",
+    "/main-SPV4NAKE.js": "65e6cfc098821ef0b9144a306a9211c7b91f5dba",
     "/manifest.webmanifest": "6bc615de7b3b7d6733972cacca0771aaaa0a8567",
     "/ngsw-worker.js": "0eeac59e0f34c35dc3a9edc926d9eabe14739608",
     "/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",

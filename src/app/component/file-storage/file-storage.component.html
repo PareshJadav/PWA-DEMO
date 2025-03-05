@@ -1,12 +1,7 @@
 <div class="file-operations">
-    <!-- Info message for browser compatibility -->
-    <div *ngIf="!isFileSystemAccessSupported()" class="info-message">
-        <div *ngIf="isIOS">
-            Using compatible file handling mode for iOS devices
-        </div>
-        <div *ngIf="!isIOS">
-            Using basic file handling mode for this browser
-        </div>
+    <!-- Storage access message -->
+    <div *ngIf="!isStorageAccessible" class="info-message">
+        Storage access is not available in your browser. Some features may be limited.
     </div>
 
     <!-- Hidden file input -->
@@ -14,45 +9,39 @@
         #fileInput
         type="file"
         accept="image/*,text/plain,application/json"
-        (change)="handleTraditionalFileSelect($event)"
+        (change)="handleFileSelect($event)"
+        style="display: none;"
     >
 
     <!-- Button group -->
     <div class="button-group">
-        <!-- Primary action buttons -->
+        <!-- File operation buttons -->
         <button 
             class="primary-button" 
-            (click)="triggerFileInput()">
+            (click)="handleFile(false)"
+            [disabled]="!isStorageAccessible">
             Choose File
         </button>
 
         <button 
+            class="secondary-button"
+            (click)="handleFile(true)"
+            [disabled]="!isStorageAccessible">
+            New Text File
+        </button>
+
+        <button 
             class="action-button"
-            (click)="downloadFile()" 
-            [disabled]="!selectedFiles.length">
-            Download
+            (click)="saveFile()" 
+            [disabled]="!isStorageAccessible || (!fileContent && !imagePreviewUrl)">
+            Save File
         </button>
 
         <button 
             class="action-button"
             (click)="clearSelection()" 
-            [disabled]="!selectedFiles.length">
+            [disabled]="!selectedFiles.length && !fileContent">
             Clear
-        </button>
-
-        <!-- Text file specific actions -->
-        <button 
-            class="secondary-button"
-            (click)="createFile()"
-            [disabled]="!canCreateNewFile">
-            New Text File
-        </button>
-
-        <button 
-            class="secondary-button"
-            (click)="saveFile()" 
-            [disabled]="!fileContent">
-            Save Changes
         </button>
     </div>
 
@@ -69,12 +58,11 @@
         </div>
 
         <!-- Text content preview -->
-        <div *ngIf="fileContent || !imagePreviewUrl" class="text-preview">
+        <div *ngIf="shouldShowTextEditor()" class="text-preview">
             <textarea 
                 [(ngModel)]="fileContent" 
                 rows="10" 
-                placeholder="Text content..."
-                [readonly]="isIOS">
+                placeholder="Enter your text here...">
             </textarea>
         </div>
     </div>
